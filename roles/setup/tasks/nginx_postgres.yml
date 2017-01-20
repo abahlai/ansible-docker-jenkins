@@ -1,0 +1,21 @@
+---
+
+- name: run docker nginx
+  docker_service:
+    project_name: nginx
+    definition:
+      version: '2'
+      services:
+        web:
+          image: nginx
+          ports:
+          - "80:80"
+          volumes:
+          - "/data/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf"
+
+- name: copy docker-compose file for postgres
+  copy: src=../files/docker-compose.yml dest={{ home_folder }}
+
+- name: run docker postgres
+  docker_service:
+    project_src: "{{ home_folder }}"
