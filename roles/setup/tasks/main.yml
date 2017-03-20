@@ -1,9 +1,0 @@
----
-
-- include: docker.yml
-
-- include: docker-compose.yml
-
-- include: jenkins.yml
-
-- include: nginx_postgres.yml
