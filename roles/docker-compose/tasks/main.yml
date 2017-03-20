@@ -1,0 +1,11 @@
+---
+
+- name: install pip
+  apt: name=python-pip state=present
+
+- name: install docker-compose
+  pip: name=docker-compose version={{ compose_vers }}
+
+- name: ensure docker is present
+  pip: name=docker
+    executable=/usr/bin/pip

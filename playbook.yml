@@ -4,4 +4,6 @@
   become: yes
   tags: setup
   roles:
-    - setup
+    - docker
+#    - docker-compose
+    - jenkins
